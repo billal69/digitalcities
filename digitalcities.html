@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Ingénierie BIM - Numérisation - Consulting</title>
+</head>
+<body>
+<header>
+  <div class="logo">
+    
+      <a href="digitalcities.html"><img src="images/Fichier 8.png " width="200px" height="80px"></a>
+    
+  </div>
+  <div class="navigation">
+    <input type="checkbox" id="nav-checkbox">
+    <label for="nav-checkbox" class="nav-toggle">
+      <img src="images/one.png" alt="open" class="open" width="95px" >
+    </label>
+    <ul class="nav-menu">
+      <li><a href="#">Ingénierie BIM</a> </li>
+      <li><a href="#">Numérisation</a> </li>
+      <li><a href="#">Consulting</a> </li>
+
+    </ul>
+  </div>
+</header>
+<div class="hero">
+  <h1>DIGITAL CITIES</h1>
+  <h3>Votre Partenaire BIM</h3>
+  <a href="#">Contact</a>
+</div>
+<div class="content">
+  <p>DIGITAL CITIES est une société de services en ingénierie informatique spécialisée dans la modélisation des données du bâtiment (BIM) et les technologies associées</p>
+  <p>Notre entreprise est spécialisée dans le BIM et offre une gamme complète de services et de solutions logicielles pour aider ses clients à travailler plus efficacement et à réaliser des projets de construction de qualité supérieure. Nous sommes engagés dans la promotion du BIM en tant que norme de l'industrie et sommes fières de notre engagement envers la durabilité et l'efficacité énergétique dans la construction.</p>
+</div>
+
+
+
+
+<div class="container">
+  <form onsubmit="sendEmail();reset();return false">
+    <h2>Contact</h2>
+    <input type="text" id="name" placeholder="Votre nom complet" required>
+    <input type="email" id="email" placeholder="Votre mail" required>
+    <input type="text" id="phone" placeholder="Votre numero de telephone" required>
+    <textarea id="message"  rows="4" placeholder="La nature de votre demande"></textarea>
+    <button type="submit">Envoyer</button>
+  </form>
+</div>
+
+<script src="Include a script tag to https://smtpjs.com/v3/smtp.js"></script>
+<script>
+  function sendEmail(){
+    Email.send({
+    Host : "smtp.gmail.com",
+    Username : "username",
+    Password : "password",
+    To : 'them@website.com',
+    From : document.getElementById("email").value,
+    Subject : "This is the subject",
+    Body : "Nom : "+ document.getElementById("name").value
+    +"<br> Email"+ document.getElementById("email").value
+    +"<br> Telephone" + document.getElementById("phone").value
+    +"<br> Message" + document.getElementById("message").value
+
+        }).then(
+          message => alert("Message envoyer" )
+        );
+  }
+</script>
+
+
+
+
+<script>
+  window.addEventListener("scroll",function(){
+    var header = document.querySelector("header");
+    header.classList.toggle("sticky",window.scrollY>40);
+  })
+</script>
+
+
+
+
+<div class="conteneur">
+  <div class="conteneur_un">
+    <img src="images/lyesjpg.jpg" alt="lyes alileche" width="200px">
+    <h1>Alileche Lyes</h1>
+    <p>Directeur General <br> Docteur en Geni-Civil </p>
+  </div>
+  <div class="conteneur_deux">
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque nobis illo odit. Saepe nostrum enim laudantium accusamus, quae eaque facilis voluptates impedit quo ipsam omnis recusandae eos debitis culpa incidunt dolorum neque deleniti aspernatur aliquid ratione consectetur quam blanditiis dignissimos! Exercitationem voluptates quam laudantium fugit laboriosam ?</p>
+  </div>
+
+</div>
+
+
+
+
+
+
+
+</body>
+</html>
